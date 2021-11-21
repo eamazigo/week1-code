@@ -1,13 +1,15 @@
-int score = 80;
+int score = 80;//the int data type named score is initialized
 
-String result;
+String result;//the string data type named result is declared
 
-if (score == 80) {
-	result = "You passed!";
-} else if (score > 80) {
-	result = "You did great!";
-} else {
-	result = "You did not pass. Try again!";
-}
+if (score == 80) {//this is a conditional statement called an if statement 
+	result = "You passed!";//if the conditions in the parentheses above are met, the following result is printed
+} else if (score > 80) {//the else if statement represents an alternative condition 
+	result = "You did great!";//this is the result that would be printed if the above conditions are met
+} else {//the else word represents an alternative if the previous conditions are not met
+	result = "You did not pass. Try again!";//the result that would be printed if none of the previous conditions are met
+}// curly brackets must encapsulate the statements 
 
-System.out.println(result);
+System.out.println(result);//this is the code the system uses to print out results
+
+//the code above is an example of how the conditional if statements are written
