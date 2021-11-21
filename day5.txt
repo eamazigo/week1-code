@@ -1,25 +1,27 @@
-<html>
-	<head>
-		<title>Daily Code Review</title>
-	</head>
-	<body>
-		<h1>Cook your food!</h1>
-		<form action="http://localhost:8080/cook">
-			<label for="foodName">Food Name:</label>
-			<input id="foodName" name="foodName" type="text">
-			<br>
-			<button type="submit">Submit</button>
-		</form>
-	</body>
-</html>
+<html>//every html code begins with <html>
+	<head>//this is the head of the html code where information about the page can be added
+		<title>Daily Code Review</title>// this is where the title of the document is added
+	</head>//this is the closing syntax for the head
+	<body>//this syntax begins the body of page
+		<h1>Cook your food!</h1> //here the header for the page is added
+		<form action="http://localhost:8080/cook">//this code allows us to send a request to the address where our code can be hosted; when our code is executed we see the screen shot at that address (http://..,etc)
+			<label for="foodName">Food Name:</label>// the for attribute allows us to associate a label with an input
+			<input id="foodName" name="foodName" type="text">//this code sets up the inputs we are requesting from the user; in this case: foodName and type
+			<br>//this is a break which adds a space
+			<button type="submit">Submit</button>//this code allows input from the user to be received 
+		</form>//this syntax is for closing out the form
+	</body>//this syntax is for osing out the body
+</html>//this syntax closes out the html code
 
-public static void main(String[] args) {
-	Javalin app = Javalin.create();
-	app.start();
+public static void main(String[] args) {//every Java program must have this main code line
+	Javalin app = Javalin.create();//this code line allows us to create a javalin app
+	app.start();//this code allows to start the javaline app
 
-	app.get("cook", ctx -> {
-		String foodSent = ctx.formParam("foodName");
-		String cookedFood = "cooked " + foodSent;
-		ctx.result("Here's your food! <br>" + cookedFood);
-	});
-}
+	app.get("cook", ctx -> {//the get method is a handler for requests from the user; the javalin app we created can now receive inputs from the user;the user wants to access the "cook" object; the ctx keyword is used to receive input from user
+		String foodSent = ctx.formParam("foodName");//the ctx keyword is accessing the foodName; the data accessed will be saved into the String foodSent
+
+		String cookedFood = "cooked " + foodSent;//this string data type called cookedFood contains the string "cooked", which will be added to data from Foodsent
+		ctx.result("Here's your food! <br>" + cookedFood);//the ctx keyword will return the result: "Here is your food! Then a break; plus data from cookedFood
+	});//a curly bracket and parenthesis needed here to properly close some codes
+}//curly bracket needed here to properly close out the entire code
+//this html code is written to allow a user request a food in the html page; the request is captured with the javalin app and processed; based on the user request the corresponding statement will be sent back.  It will look something like this: "Here is your food! cooked rice"
