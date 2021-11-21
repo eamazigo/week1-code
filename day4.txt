@@ -1,12 +1,13 @@
-public class Main {
-	public static void main(String[] args) {
-		Javalin app = Javalin.create();
+public class Main {//this line creates a class called Main
+	public static void main(String[] args) {//every Java code must have this main code line
+		Javalin app = Javalin.create();//this is how we create the Javaline app
 
-		app.start();
+		app.start();//this is part of creating the javelin app; here we are invoking it to start
 
-		app.get("foods", ctx -> {
-			Food myFood = new Food("carrots", "vegetable");
-			ctx.result("You got: " + myFood.name);
-		});
-	}
-}
+		app.get("foods", ctx -> {//the Javalin app is pointed to the object food to collect data from there; here data from user is collected; the ctx key word collects the user's request
+			Food myFood = new Food("carrots", "vegetable");//new Food object is created
+			ctx.result("You got: " + myFood.name);//the ctx keyword is used here to send our response to the request received from user
+		});//curly bracket and the closing parenthesis added to properly close code
+	}//curly bracket added to properly close code
+}//curly bracket added to properly close code
+//these lines of codes are set up in order to create a Javalin app that can collect data from user (request) and produce a response to be sent back to user; in this case the name of food is requested;and the response to be sent back will be "You got: carrots"
