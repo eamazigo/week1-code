@@ -1,24 +1,25 @@
-public class Food {
-	public String name;
-	public String type;
+public class Food {//Here we are going create an object within the class Food
+	public String name;// we declare a object string data type called name
+	public String type;// this line of code declares an object string data type called type
 
-	public Food(String name, String type) {
-		this.name = name;
-		this.type = type;
-	}
+	public Food(String name, String type) {//we create a method called Food, and assign the strinh parameters name and type to it 
+		this.name = name;//'this.' keyword is used to call the current object called name
+		this.type = type;'this.' keyword is used to call the current object called type
+	}//curly bracket added to properly close code
 
-	public void cook() {
-		if (!name.contains("cooked")) {
-			name = "cooked " + name;
-		}
-	}
+	public void cook() {//here we are creating the method cook
+		if (!name.contains("cooked")) {//this code states that if the object called name does not contain the word "cooked" then do something 
+			name = "cooked " + name;//the object called name is assigned the word "cooked plus whatever data is stored in the object
+		}//curly bracket added to properly close code
+	}//curly bracket added to properly close code
 }
 
-public class Main {
-	public static void main(String[] args) {
-		Food myFood = new Food("potato", "vegetable");
-		myFood.cook();
+public class Main {//here we are creating the class named Main that can be accessed anywhere in the program
+	public static void main(String[] args) {//every Java code must contain this line of main code
+		Food myFood = new Food("potato", "vegetable");//this code is to create a new Food method and assign the string variables potatoe and vegetable to it
+		myFood.cook();//the myFood method is pointing to the cook method in order to access data from it
 
-		System.out.println(myFood.name);
-	}
-}
+		System.out.println(myFood.name);//the myFood method points to the object called name; there the system will print out data from the object
+	}//curly bracket added to properly close code
+}//curly bracket added to properly close code
+//the purpose of this lines of code is to create a Food object with a name and type of vegetable. The information in object can then be accessed: the object will contain a Food name or Food type; for this code we are asking the code to return the food name, which in this case is potato
