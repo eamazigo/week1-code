@@ -1,52 +1,55 @@
-public static void main(String[] args) {
-	String[] foodTypes = getFoodTypes();
-	String myType = foodTypes[2];
+public static void main(String[] args) {//all Java codes starts with this line of code; public means it can be accessed from anywhere; static means the members belong to a Class not object instants;void means the method has no return value;String[] is an array of a string g data type; arg is for argument
+	String[] foodTypes = getFoodTypes();//here, we create an array of a stei g data type named food types and assigned it to a method called getFoodTypes()
+	String myType = foodTypes[2];//the string data type named myType is assigned to the array foodTypes; the value inside the array is for the switch statements
 
-	String[] foodsOfMyType = getFoodsByType(myType);
+	String[] foodsOfMyType = getFoodsByType(myType);//the string array foodOfMyType is assigned to the array getFoodsByType in order to access the string array myType
 	
-	for (String food : foodsOfMyType) {
-		System.out.println(food);
+	for (String food : foodsOfMyType) {//this is an enhanced for loop for reading for reading the data in foodsOfMyType and storing them into the string called food
+		System.out.println(food);//this line of code is for printing on screen the data in string called food
 	}
 }
 
-public static String[] getFoodTypes() {
-	String[] foodTypes = {"breakfast","lunch","dinner","dessert","snack"};
-	return foodTypes;
+public static String[] getFoodTypes() {//here, we are accessing the method getFoodTypes and adding parameters below
+	String[] foodTypes = {"breakfast","lunch","dinner","dessert","snack"};//we are adding elements to the string array foodTypes
+	return foodTypes;//we want the code to return the data in foodTypes
 }
 
-public static String[] getFoodsByType(String type) {
-	String[] foods = new String[3];
+public static String[] getFoodsByType(String type) {//we are accessing the string array method getFoodsByType and passi g the string argument named type type to it
+	String[] foods = new String[3];//we are creating a new String array with three elements 
 
-	switch(type) {
-	case "breakfast":
+
+
+
+	switch(type) {//this is a switch statement for checking for equality
+	case "breakfast"://this is the first case of the switch statement with three string elements in an array; each case below will be tested against the value inside the food type array, which is 2; arrays begin at 0, 1, 2, etc.
 		foods[0] = "pancakes";
 		foods[1] = "cereal";
 		foods[2] = "omelette";
-		break;
-	case "lunch":
+		break;//breaks are added at the end of each h case
+	case "lunch"://this is the second case of the switch statement to be tested for equality 
 		foods[0] = "sandwich";
 		foods[1] = "salad";
 		foods[2] = "soup";
-		break;
-	case "dinner":
+		break;//breaks are added at the end of each case
+	case "dinner"://this is the third case of the switch statement 
 		foods[0] = "curry";
 		foods[1] = "stir fry";
 		foods[2] = "burger";
-		break;
-	case "dessert":
+		break;//breaks are added at the end of each case
+	case "dessert"://this is the fourth case of the switch statement 
 		foods[0] = "cake";
 		foods[1] = "ice cream";
 		foods[2] = "candy";
-		break;
-	case "snack":
+		break;//breaks are added at the end of each case
+	case "snack"://this is the fifth case of the switch statement 
 		foods[0] = "chips";
 		foods[1] = "apple";
 		foods[2] = "samosa";
-		break;
-	default:
+		break;//breaks are added at the end of each case
+	default://this is the default if there is no more cases to examine 
 		// add your own
-		break;
+		break;//breaks are used to end a line of code; they are added at the end of each case
 	}
 
-	return foods;
-}
+	return foods//this line of code is for returning the values inside the array called foods
+}//the purpose of this program here is to develope codes for accessing various types of food stored in an array; when this code is ran it will print out the elements in the case called dinner:curry, stir fry, burger; this is because the string array foodType is initialized to 2; arrays I dexterity start at 0; counti g from 0, 1, 2: brings you to dinner 
